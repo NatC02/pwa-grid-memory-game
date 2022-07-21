@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Card from './components/Card';
+import shuffle from './utilities/shuffle';
 
 import React from 'react';
 
