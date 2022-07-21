@@ -20,6 +20,13 @@ function App() {
     }
   };
 
+  // When turn is complete, reset selections and disable
+  const handleTurn = () => {
+    setPickOne(null);
+    setPickTwo(null);
+    setDisabled(false);
+  };
+
   return (
     <>
       <div className="grid">
