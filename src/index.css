@@ -139,6 +139,14 @@ button {
     align-items: center;
   }
 
+  header {
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    position: fixed;
+    border-radius: 0;
+  }
+
   .grid {
     margin: auto auto 3rem auto;
   }
