@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
-import Card from './components/Card';
-import shuffle from './utilities/shuffle';
+import { useState, useEffect } from "react";
+import Card from "./components/Card";
+import shuffle from "./utilities/shuffle";
 
-import React from 'react';
+import React from "react";
 
 function App() {
-
   const [cards, setCards] = useState(shuffle); // Cards array from assets dir
 
   const [pickOne, setPickOne] = useState(null); // First card selection
@@ -27,8 +26,8 @@ function App() {
     setDisabled(false);
   };
 
-   // Used for selection and match handling
-   useEffect(() => {
+  // Used for selection and match handling
+  useEffect(() => {
     let pickTimer;
 
     // Two cards have been clicked
@@ -65,12 +64,26 @@ function App() {
     // whenever the state changes in cards, pickOne, and pickTwo run these values
   }, [cards, pickOne, pickTwo]);
 
+  // If player has found all matches, handle accordingly
+  useEffect(() => {
+    // Check for any remaining card matches
+    const checkWin = cards.filter((card) => !card.matched);
+
+    // All matches made, handle win/badge counters
+    if (cards.length && checkWin.length < 1) {
+      console.log("You win!");
+      setWins(wins + 1);
+      handleTurn();
+      setCards(shuffle);
+    }
+  }, [cards, wins]);
+
   return (
     <>
       <div className="grid">
         {cards.map((card) => {
           const { image, id, matched } = card;
-          
+
           return (
             <Card
               key={id}
