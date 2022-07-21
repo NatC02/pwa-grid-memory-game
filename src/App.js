@@ -9,7 +9,7 @@ function App() {
   const [cards, setCards] = useState(shuffle); // Cards array from assets dir
 
   const [pickOne, setPickOne] = useState(null); // First card selection
-
+  const [pickTwo, setPickTwo] = useState(null); // Second card selection
 
   return (
     <>
