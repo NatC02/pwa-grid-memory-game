@@ -10,6 +10,7 @@ function App() {
 
   const [pickOne, setPickOne] = useState(null); // First card selection
   const [pickTwo, setPickTwo] = useState(null); // Second card selection
+  const [disabled, setDisabled] = useState(false); // delay between selections
 
   return (
     <>
