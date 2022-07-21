@@ -37,7 +37,7 @@ function App() {
             <Card
               key={id}
               image={image}
-              selected={false}
+              selected={card === pickOne || card === pickTwo || matched}
               onClick={() => {}}
             />
           );
