@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 // prop function to reset game
 const Header = ({ handleNewGame, wins }) => {
-  // Update page title with win count
+  // Update page title with win count (side effect)
   useEffect(() => (document.title = `${wins} wins`), [wins]);
 
   return (

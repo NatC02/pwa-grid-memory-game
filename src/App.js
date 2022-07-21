@@ -26,6 +26,14 @@ function App() {
     setDisabled(false);
   };
 
+   // Start over
+   const handleNewGame = () => {
+    setWins(0);
+    clearBadge();
+    handleTurn();
+    setCards(shuffle);
+  };
+
   // Used for selection and match handling
   useEffect(() => {
     let pickTimer;
