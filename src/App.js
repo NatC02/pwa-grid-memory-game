@@ -11,7 +11,14 @@ function App() {
   const [pickOne, setPickOne] = useState(null); // First card selection
   const [pickTwo, setPickTwo] = useState(null); // Second card selection
   const [disabled, setDisabled] = useState(false); // delay between selections
-  const [wins, setWins] = useState(0); // Win counter / streak 
+  const [wins, setWins] = useState(0); // Win counter / streak
+
+  // Handle card selection
+  const handleClick = (card) => {
+    if (!disabled) {
+      pickOne ? setPickTwo(card) : setPickOne(card);
+    }
+  };
 
   return (
     <>
