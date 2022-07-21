@@ -27,6 +27,44 @@ function App() {
     setDisabled(false);
   };
 
+   // Used for selection and match handling
+   useEffect(() => {
+    let pickTimer;
+
+    // Two cards have been clicked
+    if (pickOne && pickTwo) {
+      // Check if the cards the same
+      if (pickOne.image === pickTwo.image) {
+        setCards((prevCards) => {
+          // set match property
+          return prevCards.map((card) => {
+            if (card.image === pickOne.image) {
+              // Update card property to reflect match
+              return { ...card, matched: true };
+            } else {
+              // No match
+              return card;
+            }
+          });
+        });
+        handleTurn();
+      } else {
+        // Prevent new selections until after delay
+        setDisabled(true);
+        // Add delay between selections
+        pickTimer = setTimeout(() => {
+          handleTurn();
+        }, 1000);
+      }
+    }
+
+    // prevent conflicting timeouts between renders
+    return () => {
+      clearTimeout(pickTimer);
+    };
+    // whenever the state changes in cards, pickOne, and pickTwo run these values
+  }, [cards, pickOne, pickTwo]);
+
   return (
     <>
       <div className="grid">
@@ -38,7 +76,7 @@ function App() {
               key={id}
               image={image}
               selected={card === pickOne || card === pickTwo || matched}
-              onClick={() => {}}
+              onClick={() => handleClick(card)}
             />
           );
         })}
