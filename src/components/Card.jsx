@@ -7,7 +7,7 @@ const Card = ({ image, selected, onClick }) => {
         <img
           alt=""
           className="card-back"
-          src={"/assets/"} // edit this to pick default image
+          src={"/assets/smile-avatar.svg"} // edit this to pick default image
           onClick={onClick}
         />
       </div>

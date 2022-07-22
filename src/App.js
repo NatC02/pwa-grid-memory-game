@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "./components/Card";
 import shuffle from "./utilities/shuffle";
+import useAppBadge from './hooks/useAppBadge';
 
 import React from "react";
 
