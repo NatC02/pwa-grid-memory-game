@@ -117,7 +117,7 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm install -g firebase-tools 
    ```
-2. Create Firebase account here: https://firebase.google.com/ and create a project
+2. Create Firebase account <a href="https://firebase.google.com/">here<a/> and create a project
 
 3. build your web app
    ```sh
