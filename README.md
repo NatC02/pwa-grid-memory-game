@@ -72,11 +72,22 @@ Built and implemented with:
 ```
 ├── node_modules
 ├── public
-├── server
+│   └── assets
 ├── src
-├── package.json
-├── README.md
-└── vite.config.js
+│   ├── components
+│   ├── hooks
+│   ├── utilities
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── reportWebVitals.js
+│   ├── service-worker.js
+│   ├── serviceWorkerRegistration.js
+│   └── setupTests.js
+├── README.gif
+└── README.md
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
